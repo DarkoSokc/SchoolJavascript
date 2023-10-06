@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Železnica</title>
+	</head>
+
+	<body>
+	
+		<img id="vlak" src="vaja16/Zeleznica.jpg" height="200px" alt="Železniška proga" onClick="menjava()"/>
+		
+		<img id="zapornica" src="vaja16/dvignjeneZapore.jpg" height="200px" alt="Zapornica"/>
+	
+		<script>
+			/*
+				Ime datoteke: 	zeleznica.html
+				Avtor:			Darko Šokčević
+				Vhodni podatki: /
+				Opis: 			Program, ki ob kliku zamenja zeleznico brez prometa v zeleznico z spuščenimi zaporami in vlakom na njej
+				Izhodni podatki:Sliki železniških zapor in vlaka ter železnice in odprtih zapor
+			*/
+			
+			// Deklariramo in inicializiramo spremenljivke
+			var prostaProga = true;
+			
+			// Funkcija, ki zamenja sliki
+			function menjava() {
+			
+				prostaProga = !prostaProga;
+				if (prostaProga) {
+					document.getElementById('vlak').src = 'vaja16/Zeleznica.jpg';
+					document.getElementById('zapornica').src = 'vaja16/dvignjeneZapore.jpg';
+				} else {
+					document.getElementById('vlak').src = 'vaja16/Vlak.jpg';
+					document.getElementById('zapornica').src = 'vaja16/spusceneZapornice.jpg';
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

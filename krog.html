@@ -1,0 +1,68 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Krog</title>
+	</head>
+	
+
+	<body>
+	
+		<canvas id="canvas"  width="600" height="300" onClick="spremeniBarvo()"></canvas>
+		
+		
+		
+		<script type="text/javascript">
+			
+			/*
+				Ime datoteke: 	krog.html
+				Avtor:			Darko Šokčević
+				Vhodni podatki: Velikost kroga
+				Opis:			Program, ki izriše zelen krog željene velikosti, ob kliku spremeni barvo v redečo.
+				Izhodni podatki:Izris kroga in sprememba barve
+			*/
+			
+			// Deklariramo in inicializiramo velikost kroga in krog
+			var velikost = prompt('Kako velik krog želimo?');
+			var zelena = true;
+			var color = 'green';
+			var canvas = document.getElementById("canvas");
+						
+			// Deklariramo risalno ploščo
+			canvas.width = 2*velikost;
+			canvas.height = 2*velikost;
+			
+			// Deklariramo sredino plošče
+			var osX = canvas.width / 2;
+			var osY = canvas.height / 2;
+			
+			// Izbira dimenizje risanja
+			var ctx = canvas.getContext("2d");
+			
+			// Inicializacija kroga
+			ctx.beginPath();
+			ctx.arc(osX, osY, velikost, 0, 2 * Math.PI, false);
+			ctx.fillStyle = color;
+			ctx.fill();
+			ctx.lineWidth = 1;
+		
+			// Funkcija, ki spremeni barvo kroga ob kliku nanj
+			function spremeniBarvo () {
+				zelena = !zelena;
+				if(zelena) {
+					color ='green';
+				} else {
+					color ='red';
+				}
+			
+			ctx.fillStyle = color;
+			ctx.fill();
+			}
+		
+			
+			
+			
+		</script>
+	</body>
+	
+</html>

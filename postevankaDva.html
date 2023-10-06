@@ -1,0 +1,57 @@
+<html>
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Poštevanka</title>
+	</head>
+	
+	<body>
+	<h1>Račun</h1>
+	<script type="text/javascript">
+		/*
+				Ime datoteke: 	postevankaDva.html
+				Avtor:			Darko Šokčević
+				Vhodni podatki: Zmnožek dveh naključnih števil
+				Opis:			Program, ki izpiše če smo zmnožili dva naključna števila pravilno
+				Izhodni podatki:Izpis rezultata
+		*/
+	
+		// Deklariramo in iniciliziramo naključni števili
+		
+		var osnovaEna = Math.random();
+		
+		osnovaEna = Math.floor(osnovaEna * 10) + 1;
+		
+		var osnovaDva = Math.random();
+		
+		osnovaDva = Math.floor(osnovaDva * 10) + 1;
+		
+		// Postavimo uprašanje oziroma račun
+
+		var racun = prompt('Izbral sem si število ' + osnovaEna + ' ter število ' + osnovaDva + ', kakšen je njun zmnožek?');
+		
+		// Definiramo zmnožek obeh naključnih števil
+		var zmnozek = (osnovaEna * osnovaDva);
+		var odgovor = zmnozek;
+		
+		// Če je vnešeno število enako zmnožku izpišemo z zeleno Čestitamo!, če je napačen pa z rdečo Narobe!
+		if (odgovor == racun) {
+		
+			document.writeln('<font color="green">Čestitamo!</font>');
+		
+		} else {
+		
+			document.writeln('<font color="red">Narobe!</font>');
+		
+		}
+		
+
+			
+			
+		
+		
+		
+	</script>
+	</body>
+
+</html>

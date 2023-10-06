@@ -1,0 +1,76 @@
+<html>
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Poštevanka</title>
+	</head>
+	
+	<body>
+	<h1>Rezultati</h1>
+	<script type="text/javascript">
+		/*
+				Ime datoteke: 	postevankaTri.html
+				Avtor:			Darko Šokčević
+				Vhodni podatki: Zmnožek dveh naključnih števil
+				Opis:			Program, ki izpiše če smo zmnožili dva naključna števila pravilno
+				Izhodni podatki:Izpis pravilnih in nepravilnih odgovorov in procent pravilno opravljenih
+		*/
+	
+		// Deklariramo in inicializiramo spremenljivke
+			var stPosk = 0;
+			var pravilni = 0;
+			var napacni = 0;
+			
+			while (true) {
+				
+				// Deklariramo in inicializiramo spremenljivke
+				var osnovaEna = nakljucnoStevilo();
+				var osnovaDva = nakljucnoStevilo();
+				var zmnozek = (osnovaEna * osnovaDva);
+				
+				// Obiskovalca vprašamo po rezultatu zmožka izbranih števil
+				var racun = prompt('Koliko je ' + osnovaEna + ' krat ' + osnovaDva + '? Za izhod napiši x.');
+				
+				if (racun == 'x') {
+					break;
+				} else if (zmnozek == racun) {
+				
+					// Prištejemo
+					pravilni ++;
+				
+				} else {
+			
+					// Prištejemo 
+					napacni ++;
+				}
+				
+				// Prištejemo poskus
+				stPosk ++;
+			}
+			
+			// Izračunamo odsotek uspešnosti
+			var uspesnost = pravilni * 100 / stPosk;
+			
+			// Izpišemo število pravilnih in napačnih odgovorov ter odstotek uspešnosti
+			document.writeln('<h1>Učenje poštevanke</h1>');
+			document.writeln('Število pravilnih odgovorov: ' + pravilni + '.<br>');
+			document.writeln('Število napačnih odgovorov: ' + napacni + '.<br>');
+			document.writeln('Odstotek uspešnosti: ' + uspesnost + '.');
+			
+			// Funkcija, ki izbere naključno število med 1 in 10
+			function nakljucnoStevilo() {
+			
+				// Izberemo nakljucno stevilo
+				var nakljucno = Math.random();
+				return Math.floor(nakljucno * 10) + 1;
+		
+			}
+			
+			
+		
+		
+		
+	</script>
+	</body>
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Amortizacija</title>
+	</head>
+
+	<body>
+		<h1>Amortizacija</h1>
+		<script type="text/javascript">
+			
+			/*
+				Ime datoteke: 	amortizacija.html
+				Avtor:			Darko Šokčević
+				Vhodni podatki: amortizacijska osnova življenska doba
+				Opis:			Program, ki izračuna amortizacijo enakih letnih zneskov nekega predmeta
+				Izhodni podatki:amortizacijska stopnja 
+				*/
+			
+			// Deklariramo in inicializiramo predmet, vsoto stroškov in življensko dobo predmeta
+			var predmet = prompt('Za kater predmet nas zanima amortizacija?');
+			var stroski = prompt('Koliko so nas stali celotni stroški predmeta v evrih?');
+			var zivljenje = prompt('Kakšna je približna življenska doba v letih predmeta?');
+			
+			// Deklariramo amortizacijo
+			var amortizacija = (stroski / zivljenje);
+			
+			
+			//Izpišemo število glav črede v spletni brskalnik
+			document.write(predmet + ' bo amortiziral ' + amortizacija + ' evrov na leto.');
+			
+		</script>
+	</body>
+	
+</html>

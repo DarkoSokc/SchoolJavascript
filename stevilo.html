@@ -1,0 +1,44 @@
+<html>
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Število</title>
+	</head>
+	
+	<body>
+	<h1>Naključno število</h1>
+	<script type="text/javascript">
+		/*
+				Ime datoteke: 	stevilo.html
+				Avtor:			Darko Šokčević
+				Vhodni podatki: Pozitivno oz. negativno število
+				Opis:			Program, ki izpiše negativno število v rdeči barvi ali pozitivno v zeleni
+				Izhodni podatki:Izpis števila v njegovi barvi
+		*/
+	
+		// Deklariramo in iniciliziramo naključno število
+		var random = Math.random();
+		
+		// Postavimo vprašanje kakšno število hočemo
+		
+		var pozitivno = false;
+		
+		pozitivno = confirm('Želite pozitivno izžrebano število?');
+		
+		// Če je izbrano pozitivno potem nam število se obarva v zeleno
+		if(pozitivno == true){
+		
+			random = Math.floor(random * 1000) +1;
+			document.writeln('Vaša naključna številka je ' + '<font color="Chartreuse">' + random + '</font>');
+		}
+		//Če je izbrano negativno število se obarva v rdeče	
+		else{
+
+		random = Math.floor(random * (-1000) -1);
+		document.writeln('Vaša naključna številka je ' + '<font color="red">' + random + '</font>');
+		}
+		
+	</script>
+	</body>
+
+</html>

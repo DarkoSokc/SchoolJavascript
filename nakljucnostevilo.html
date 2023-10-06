@@ -1,0 +1,53 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Nakljucno stevilo</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			
+			/*
+				Ime datoteke: 	nakljucnostevilo.html
+				Avtor:			Darko Šokčević
+				Vhodni podatki: Katero število želimo
+				Opis:			Program, ki izpiše ali smo ugotovili pravo naključno število
+				Izhodni podatki:Izpis naključnega števila
+			*/
+			
+			// Deklariramo in inicializiramo spremenljivke
+			var random = Math.random();
+			
+			// Množimo s 100 + 1 da dobimo število od 1 do 100
+			random = Math.floor(random * 100) + 1;
+			
+			// Prvi poskus ugibanja
+			var stevilo = prompt('Katero število sem si izmislil?');
+			
+			// Ponavljamo, do uspešnega ugibanja.
+			while (true) {
+				// Če je izbrano število večje, izpišemo to za igralca in ga ponovno vprašamo za ugib števila
+				if (random < stevilo) {
+					stevilo = prompt('Izbrana številka je večja od zamišljene, poskusi šeenkrat:');
+				} 
+				// Če je izbrano število manjše, izpišemo to za igralca in ga ponovno vprašamo za ugib števila
+				else if (random > stevilo) {
+					stevilo = prompt('Izbrana številka je manjša od zamišljene, poskusi šeenkrat:');
+				} else {
+					// Če igralec ugane število mu se izpiše izbrano/zamišljeno število in čestitka
+					document.writeln('<h1>Čestitam!</h1>');
+					document.writeln('Izbrano število je ' + random + '.');
+					break;
+				}
+				
+			}
+			
+			
+			
+			
+			
+		</script>
+	</body>
+	
+</html>

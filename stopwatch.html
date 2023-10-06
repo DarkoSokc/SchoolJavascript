@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Štoparica</title>
+	</head>
+	
+	<body>
+		<div id="stoparica-container">
+			<h1>Štoparica</h1>
+			
+			<div id="stoparica">
+				00:00:00
+			</div>
+			
+			<button onclick="start()" id="start-btn">Start</button>
+			<button onclick="ustavi()">Stop</button>
+		</div>
+	
+		<script>
+		
+		/*
+			Ime datoteke: Štoparca.html
+			Avtor: Darko Šokčević
+			Vhodni podatki: /
+			Opis: Štoparica ki na gumb start meri čas in na gumb stop čas ustavi, na ponovni klik start začne ponovno
+			Izhodni podatki: Izpis trenutnega časa
+	
+		*/
+		
+			// Deklariramo spremenljivke
+			var stoparica = document.getElementById("stoparica");
+			var timeoutId = null;
+			var min = 0;
+			var sek = 0;
+			var milisek = 0;
+	
+			// funkcija ki začne s štetjem časa
+			function start() {
+			
+				if (min === 0 && sek === 0 && milisek === 0) {
+				
+					stoparica.innerHTML = '00:00:00';
+				}
+				
+				timeoutId = setInterval(function() {
+					var minShow = parseInt(min);
+					var sekShow = parseInt(sek);
+					var milisekShow = parseInt(milisek);
+					
+					milisek++;
+					
+					// Dodajanje trajanje časa v milisekundah, sekundah, minutah itd.
+					if (milisek == 100) {
+						sek = sek + 1;
+						milisek = 0;
+					}
+					if (sek == 60) {
+						min = min + 1;
+						sek = 0;
+					}
+					if (milisek < 10) {
+						milisekShow = '0' + milisek;
+					} else {
+						milisekShow = milisek;
+					}
+					if (sek < 10) {
+						sekShow = '0' + sek;
+					} else {
+						sekShow = sek;
+					}
+					if (min < 10) {
+						minShow = '0' + min;
+					} else {
+						minShow = min;
+					}
+				
+					// Izpis časa od klika Start 
+					stoparica.innerHTML = minShow + ':' + sekShow + ':' + milisekShow;
+				}, 10);
+			}
+			
+			// Funkcija ki ustavi čas in ga pokaže, ter ob novem kliku na start istega tudi pobriše
+			function ustavi() {
+				clearInterval(timeoutId);
+			}
+			
+		</script>
+		
+	</body>
+	
+</html>

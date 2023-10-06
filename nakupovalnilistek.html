@@ -1,0 +1,53 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Nakupovalni listek</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			
+			/*
+				Ime datoteke: 	nakupovalnilistek.html
+				Avtor:			Darko Šokčević
+				Vhodni podatki: Število in katere stvari 
+				Opis:			Program, ki izdela tabelo nakupovanja
+				Izhodni podatki:Izpis stvari v tabeli 
+			*/
+			
+			// Deklariramo in inicializiramo število stvari
+			var stvar = prompt('Koliko stvari bomo kupili?');
+			
+
+		// Izpišemo naslov
+			document.writeln('<h1>Nakupovalni listek</h1>');
+			
+		// Izpišemo naslovno vrstico tabele
+			document.writeln('<table border="1">');		
+			document.writeln('<tr> <th> Zap. št. </th> <th> Opis predmeta </th> </tr>');
+			
+		// Zanka, kjer vpišemo toliko predmetov kolikor smo napisali da imamo stvari
+			for(c=0; c<stvar; c=c+1) {
+				
+			// Inicializiramo predmete za seznam
+				var predmet = prompt('Kaj bomo kupili?');
+				
+			// Prvi stolpec - Število stvari
+				document.writeln('<tr>');
+				document.writeln('<td>' + (c+1) + '</td>');
+			
+			// Drugi stolpec - Opis predmetov
+				document.writeln('<td>');
+				document.writeln(predmet);
+				document.writeln('</td>');
+				document.writeln('</tr>');
+			}	
+			
+		// Zaključimo tabelo 
+		document.writeln('</table>');
+			
+		</script>
+	</body>
+	
+</html>

@@ -1,0 +1,55 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Tabela</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			
+			/*
+				Ime datoteke: 	postevanka.html
+				Avtor:			Darko Šokčević
+				Vhodni podatki: /
+				Opis:			Program, ki izpiše tabelo poštevanke do števila 100
+				Izhodni podatki:Izpis poštevanke v tabeli in zmnožke števil v stolpcih in vrstah
+			*/
+			
+			//Izpišemo naslov 
+			document.writeln('<h1>Poštevanka</h1>');
+			
+			//Izpišemo naslovno vrstico tabele
+			document.writeln('<table border="1">');
+			document.writeln('<tr>');
+			
+			// Zanka, kjer množimo eno z drugim
+			// Zanka za prvo vrsto
+			for(k = 1; k < 11; k=k+1) {
+				document.writeln('<th>');
+				document.writeln(k);
+				document.writeln('</th>');
+			}	
+			// Zanka za prvi stolpec in množenje ostalih
+			for(c = 2; c < 11; c=c+1) {
+				document.write('<tr>');
+				document.write('<th>' + c + '</th>');
+				document.write('<th>' + (c * 2) + '</th>');	
+				document.write('<th>' + (c * 3) + '</th>');
+				document.write('<th>' + (c * 4) + '</th>');
+				document.write('<th>' + (c * 5) + '</th>');
+				document.write('<th>' + (c * 6) + '</th>');
+				document.write('<th>' + (c * 7) + '</th>');
+				document.write('<th>' + (c * 8) + '</th>');
+				document.write('<th>' + (c * 9) + '</th>');
+				document.write('<th>' + (c * 10) + '</th>');
+			}
+			// Zaključimo tabelo
+			document.writeln('</tr>');
+			document.writeln('</table>');
+			
+			
+		</script>
+	</body>
+	
+</html>
